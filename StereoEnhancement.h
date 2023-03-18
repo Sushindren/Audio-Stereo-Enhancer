@@ -23,5 +23,5 @@ typedef struct waveheader* headerobj;
 
 typedef float float_32t;
 typedef int int_32t;
-
+void MonoEnhance(float *src,float gain);
 void StereoEnhance(float *Src, float gain);
