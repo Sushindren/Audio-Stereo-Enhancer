@@ -9,5 +9,5 @@ output - > Path of output file
 This will improve the audio, especially in stereo and mono.
 With the right audio mixer, the result will be optimised based on the gain adjustment.
 
-High gain values may cause saturation, but this may not effect the code result; nonetheless, 
+High gain values may cause saturation, but this may not affect the code result; nonetheless, 
 higher gain may cause audio to become corrupt.
