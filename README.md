@@ -1,4 +1,4 @@
-# StereoAlgorithm
+# Stereo-Enhancer Algorithm
 
 #This code is only supported for mono and stereo audio files with the input samplerate
 
