@@ -25,22 +25,21 @@ int main()
 	short outbuf[FRAME] = { 0 };
 
 	while (!feof(fr)) {
-		
 		if (ChannelCheck) {
 			fread(Inbuf, sizeof(short int), 256, fr);
 			for (int i = 0,k = 0; i < 256; i++) {
 				src[k++] = (float)(Inbuf[i] / 32767.f);
 				src[k++] = (float)(Inbuf[i] / 32767.f);
 			}
+			MonoEnhance(src,gain);
 		}
 		else {
 			fread(Inbuf, sizeof(short int), FRAME, fr);
 			for (int i = 0; i < FRAME; i++)
 				src[i] = (float)(Inbuf[i] / 32767.f);
+            		StereoEnhance(src, gain);
 		}
-
-		StereoEnhance(src, gain);
-
+		
 		for (int i = 0; i < FRAME; i++)
 			outbuf[i] = (short)(src[i] * 32767.f);
 
