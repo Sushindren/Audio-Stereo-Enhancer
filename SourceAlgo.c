@@ -13,7 +13,8 @@ int main()
 	headerobj content = (headerobj)malloc(sizeof(Waveheader));
 
 	fread(content, 1, sizeof(Waveheader), fr);
-	const int ChannelCheck = (content->num_channels == 1) ? (content->num_channels = 2) : 0;
+	const int ChannelCheck = (content->num_channels == 1) ? (content->num_channels = 2,content->block_align*=2,
+                            content->byte_rate*=2,content->chunk_size*=2,content->subchunk2_size*=2) : 0;
 	float gain = 2.5;
 	fwrite(content, 1, sizeof(Waveheader), fw);
 
